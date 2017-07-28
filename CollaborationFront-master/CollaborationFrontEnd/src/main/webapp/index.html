@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  
+  <meta charset="utf-8">	`
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <meta name="description" content="Simple ideas for enhancing text input interactions" />
+		<meta name="keywords" content="input, text, effect, focus, transition, interaction, inspiration, web design" />
+		<meta name="author" content="Codrops" />
+  
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ 
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+  
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script> 
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-cookies.js"></script>
+
+  		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.2.0/css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/set2.css" />
+  	  <script type="text/javascript" src="app.js"></script>
+  	  <script type="text/javascript" src="user/UserController.js"></script>
+  	  <script type="text/javascript" src="user/UserService.js"></script>
+  	   <script type="text/javascript" src="user/AuthenticationService.js"></script>
+  	   <script type="text/javascript" src="user/LoginController.js"></script>
+  	   <script type="text/javascript" src="user/FlashService.js"></script>
+  	   
+  	  <script type="text/javascript" src="c_blog/BlogController.js"></script>
+  	  <script type="text/javascript" src="c_blog/BlogService.js"></script>
+  	  <script type="text/javascript" src="forum/ForumController.js"></script>
+  	  <script type="text/javascript" src="forum/ForumService.js"></script>
+  	  <script type="text/javascript" src="jobs/JobController.js"></script>
+  	  <script type="text/javascript" src="jobs/JobService.js"></script>
+  	  
+<style>
+
+.jumbotron{
+background-color: lavenderblush;
+margin-top: -2em;
+}
+.header-row{
+    padding-left: 0px;
+    padding-right: 0px;
+    max-width: 1100px;
+
+
+    margin-right: auto;
+
+    margin-left: auto;
+    zoom: 1;
+}
+.header-logo {
+    margin-top: 21px;
+    margin-right: 0px;
+    margin-bottom: 21px;
+    margin-left: 0px;
+}
+.header-logo {
+    display: block;
+    float: left;
+    max-width: 100%;
+    zoom: 1;
+}
+
+
+.menubar {
+ overflow: hidden;
+}
+.menubar::before {
+ content: '';
+ position: absolute;
+ height: 100%;
+ width: 100%;
+ border-width: 2px 0;
+ border-color: #F00000;
+ border-style: solid;
+ left: 0;
+ -webkit-transform: translate3d(-101%,0,0);
+ transform: translate3d(-101%,0,0);
+ -webkit-transition: -webkit-transform 0.5s;
+ transition: transform 0.5s;
+}
+
+.menubar:hover::before {
+ -webkit-transform: translate3d(0,0,0);
+ transform: translate3d(0,0,0);
+}
+
+
+.menubar span {
+ display: inline-block;
+ position: relative;
+ -webkit-transform: perspective(1000px) rotate3d(0,1,0,0deg);
+ transform: perspective(1000px) rotate3d(0,1,0,0deg);
+ -webkit-transition: -webkit-transform 0.5s, color 0.5s;
+ transition: transform 0.5s, color 0.5s;
+}
+
+.menubar:hover span {
+ color: #F00000;
+ -webkit-transform: perspective(1000px) rotate3d(0,1,0,360deg);
+ transform: perspective(1000px) rotate3d(0,1,0,360deg);
+}
+span {}
+
+
+
+.menubar span:nth-child(4),
+.menubar:hover span:first-child {
+ -webkit-transition-delay: 0s;
+ transition-delay: 0s;
+}
+
+.menubar span:nth-child(3),
+.menubar:hover span:nth-child(2) {
+ -webkit-transition-delay: 0.1s;
+ transition-delay: 0.1s;
+}
+
+.menubar span:nth-child(2),
+.menubar:hover span:nth-child(3) {
+ -webkit-transition-delay: 0.2s;
+ transition-delay: 0.2s;
+}
+
+.menubar span:first-child,
+.menubar:hover span:nth-child(4) {
+ -webkit-transition-delay: 0.3s;
+ /* transition-delay: 0.3s; */
+}
+span li a {
+text-decoration: none;
+}
+.navbar-collapse{
+  border-color: #e7e7e7;
+}
+.navbar-left {
+    float: left !important;
+}
+.navbar-nav {
+    float: left;
+    margin: 0;
+}
+.nav {
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+ul{
+    margin: 0;
+    padding: 0;
+}
+ul{
+    display: block;
+    list-style-type: disc;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 40px;
+}
+.navbar-default .navbar-nav > li > a {
+    color: #555;
+}
+.navbar-nav > li > a {
+    font-size: 1.1em;
+    padding: 0;
+    line-height: 30px;
+}
+.nav > li > a {
+    position: relative;
+    display: block;
+   padding: 5px 25px;
+}
+.dropdown-menu {
+    top: 165%;
+    right: auto;
+    left: 0;    
+    border-top: 5px solid #CC2127;
+    padding: 0;
+   	
+    float: left;
+    margin: 2px 0 0;
+    font-size: 14px;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    background-clip: padding-box;
+   
+    border-radius: 4px;box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    
+}
+
+body a {
+     /* transition: 0.5s all ease;*/
+   -webkit-transition: 0.5s all ease;
+   /*  -moz-transition: 0.5s all ease;
+    -o-transition: 0.5s all ease;
+    -ms-transition: 0.5s all ease;
+    text-decoration: none;*/
+}
+a {
+     background-color: transparent; 
+     text-decoration: none;
+}
+a:-webkit-any-link {
+    color: -webkit-link;
+    text-decoration: underline;
+    cursor: auto;
+}
+.password.ng-valid {
+color: lightgreen;
+}
+
+.password.ng-dirty.ng-invalid-required {
+	color: red;
+}
+
+.password.ng-dirty.ng-invalid-minlength {
+color: yellow;
+}
+ .confirmMessage{
+   /*  margin-left: 30%; */
+    margin-top: 1.5%;
+   position: absolute;
+}
+
+html, body {
+width: 100%;
+}
+
+
+/*  Blog */
+
+div.viewBlog,div.viewForum {
+    margin: 5px;
+    border: 10px solid white;
+    float: left;
+    width: 1200px;
+    height: 315px;
+}
+
+div.viewBlog:hover {
+    border: 10px solid lightblue;
+}
+div.desc {
+    padding: 15px;
+    text-align: center;
+}
+.editContent{
+margin-right: 2em;  
+margin-top: 1.5em; 
+text-align: right; 
+float: right;
+
+}
+
+div.viewForum:hover {
+    -moz-box-shadow: 0 0 10px #ccc; 
+-webkit-box-shadow: 0 0 10px #ccc; 
+box-shadow: 0 0 10px #ccc; 
+}
+/* Forum */
+
+</style>
+<script>
+
+function checkPass(){
+		var password = document.getElementById('passWord');
+		var confirmpassword = document.getElementById('confirmPass');
+		
+		var message = document.getElementById('confirmMessage');
+		
+		 var goodColor = "lightgreen";
+		    var badColor = "#ff6666";
+		    
+		    if(password.value == confirmpassword.value){
+		        //The passwords match. 
+		        //Set the color to the good color and inform
+		        //the user that they have entered the correct password 
+		       // confirmpassword.style.backgroundColor = goodColor;
+		        message.style.color = goodColor;
+		        message.innerHTML = "<span class='glyphicon glyphicon-ok'></span>"
+		    }else{
+		        //The passwords do not match.
+		        //Set the color to the bad color and
+		        //notify the user.
+		       // confirmpassword.style.backgroundColor = badColor;
+		        message.style.color = badColor;
+		        message.innerHTML = "<span class='glyphicon glyphicon-remove'></span>"
+		    }
+		    
+		    
+	}
+
+
+</script>
+</head>
+<body ng-app="myApp"> 
+
+<div class="jumbotron" ng-controller="UserController as ctrl">
+
+  <div class="header-row" style="padding-top: 0px; padding-bottom: 0px;">
+
+		<div class="header-logo" data-margin-top="51px" data-margin-bottom="21px" data-margin-left="0px" data-margin-right="0px" style="margin-top: -106px; ">
+				<img src="image/logo.png" width="195" height="200" alt="SlangChat" class="header-logo-1x">
+		</div>
+
+
+		<div class="collapse navbar-collapse navbar-right">
+     <ul class="nav navbar-nav navbar-left">
+
+      <li class="link menubar"><a href="#home"><span>H</span><span>O</span><span>M</span><span>E</span></a></li>
+       <li class="link menubar"><a href="#"><span>A</span><span>B</span><span>O</span><span>U</span><span>T</span></a></li>
+        <li class="link menubar"><a href="#forum"><span>F</span><span>O</span><span>R</span><span>U</span><span>M</span></a></li>
+       <li class="link menubar"><a href="#blog"><span>B</span><span>L</span><span>O</span><span>G</span></a></li>
+        <li class="link menubar"><a href="#jobs"><span>J</span><span>O</span><span>B</span><span>S</span></a></li>
+        
+       <li ng-hide="userName" class="link menubar"><a href="#login"><span>S</span><span>i</span><span>g</span><span>n</span><span>&nbsp</span><span>I</span><span>n</span></a></li>
+        <li  ng-hide="userName" class="link menubar"><a href="#register"><span>S</span><span>i</span><span>g</span><span>n</span><span>&nbsp</span><span>U</span><span>p</span></a></li>   
+        
+        <li ng-if="userName" ><a class="dropdown-toggle link menubar" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span>M</span><span>y</span><span>&nbsp</span><span>A</span><span>c</span><span>c</span><span>o</span><span>u</span><span>n</span><span>t</span><span>&nbsp</span><span class="caret"></span></a>
+        <ul class="dropdown-menu">
+									<li><a class="hvr-bounce-to-bottom" style="text-decoration: none;" href="#"><span class="glyphicon glyphicon-user"></span> My Profile</a></li>
+                                 	<li><a class="hvr-bounce-to-bottom" style="text-decoration: none;" href="#"><span class="glyphicon glyphicon-cog"></span> Setting</a></li>
+                                    <li><a class="hvr-bounce-to-bottom" style="text-decoration: none;" href="#logout"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
+                                   
+								</ul>
+        </li>    
+     </ul>
+     
+     
+     
+    </div>
+
+	</div>
+
+</div>
+
+ <div class="container" ng-controller="UserController as ctrl" >
+    	<div ng-view></div>
+    </div>
+
+</body>
+</html>
